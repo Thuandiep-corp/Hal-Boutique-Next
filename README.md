@@ -10,6 +10,8 @@ Tech stack chính:
 
 Một repository mẫu cho cửa hàng nhỏ, tổ chức theo hướng feature-first với mục tiêu phát triển theo DDD (nhẹ) và có khả năng mở rộng sang EDA (event-driven architecture) khi cần.
 
+theem choox nayf nayf
+
 Tài liệu này cung cấp:
 - Hướng dẫn chạy nhanh
 - Mô tả chi tiết cấu trúc thư mục hiện tại
