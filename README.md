@@ -57,7 +57,7 @@ Giữ domain logic rõ ràng (feature-first / DDD-light), phát triển nhanh (i
 ## Cấu trúc thư mục — giải thích chi tiết
 
 / (repo root)
-├── app/                          # Next.js App Router (routes, layouts, API handlers)
+</br>├── app/                          # Next.js App Router (routes, layouts, API handlers)
 </br>│   ├── layout.tsx                # root layout -> place providers (SWR, Providers)
 </br>│   ├── (shop)/
 </br>│   │   ├── products/
