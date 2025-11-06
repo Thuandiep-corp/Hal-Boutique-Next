@@ -16,6 +16,10 @@ Một repository mẫu cho cửa hàng nhỏ (Hal Boutique). Project được c�
 - test/: For writing or improving automated tests.
 - doc/: For documentation updates.
 
+<img style="width: 100%; height: auto" alt="image" src="https://github.com/user-attachments/assets/e96ada5f-ba39-49d5-880d-d49caab1db10" />
+
+  
+
 # Hal Boutique — Next.js (App Router)
 
 Một repository mẫu cho cửa hàng nhỏ, tổ chức theo hướng feature-first với mục tiêu phát triển theo DDD (nhẹ) và có khả năng mở rộng sang EDA (event-driven architecture) khi cần.
