@@ -8,13 +8,13 @@ Một repository mẫu cho cửa hàng nhỏ (Hal Boutique). Project được c�
 - TailwindCSS (config có sẵn)
 
 # Git branch name rule:
-feature/: For new features or functionalities.
-bugfix/: For fixing bugs in the code.
-hotfix/: For urgent patches, usually applied to production.
-design/: For user interface or user experience updates.
-refactor/: For improving code structure without changing functionality.
-test/: For writing or improving automated tests.
-doc/: For documentation updates.
+- feature/: For new features or functionalities.
+- bugfix/: For fixing bugs in the code.
+- hotfix/: For urgent patches, usually applied to production.
+- design/: For user interface or user experience updates.
+- refactor/: For improving code structure without changing functionality.
+- test/: For writing or improving automated tests.
+- doc/: For documentation updates.
 
 # Hal Boutique — Next.js (App Router)
 
