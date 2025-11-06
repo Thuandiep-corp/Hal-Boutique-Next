@@ -2,10 +2,20 @@ Hal Boutique — Next.js app (App Router)
 
 Một repository mẫu cho cửa hàng nhỏ (Hal Boutique). Project được cấu trúc theo feature-first và có ý định phát triển theo các nguyên tắc DDD nhẹ, dễ mở rộng sang EDA khi cần.
 
-Tech stack chính:
+# Tech-stack:
 - Next.js (App Router)
 - TypeScript
 - TailwindCSS (config có sẵn)
+
+# Git branch name rule:
+feature/: For new features or functionalities.
+bugfix/: For fixing bugs in the code.
+hotfix/: For urgent patches, usually applied to production.
+design/: For user interface or user experience updates.
+refactor/: For improving code structure without changing functionality.
+test/: For writing or improving automated tests.
+doc/: For documentation updates.
+
 # Hal Boutique — Next.js (App Router)
 
 Một repository mẫu cho cửa hàng nhỏ, tổ chức theo hướng feature-first với mục tiêu phát triển theo DDD (nhẹ) và có khả năng mở rộng sang EDA (event-driven architecture) khi cần.
@@ -48,64 +58,64 @@ Giữ domain logic rõ ràng (feature-first / DDD-light), phát triển nhanh (i
 
 / (repo root)
 ├── app/                          # Next.js App Router (routes, layouts, API handlers)
-│   ├── layout.tsx                # root layout -> place providers (SWR, Providers)
-│   ├── (shop)/
-│   │   ├── products/
-│   │   │   ├── [category]/page.tsx
-│   │   │   └── details/[productId]/page.tsx
-│   │   └── user/...
-│   ├── (back-office)/
-│   │   └── dashboard/page.tsx
-│   └── api/
-│       └── v1/
-│           ├── auth/route.ts     # thin HTTP layer -> calls application handlers
-│           └── orders/route.ts
-│
-├── features/                      # Bounded contexts (feature-first, DDD)
-│   ├── products/
-│   │   ├── ui/                    # React components + client hooks (useSWR, useStore)
-│   │   │   ├── ProductCard.tsx
-│   │   │   └── ProductList.tsx
-│   │   ├── application/           # Use-cases / command & query handlers
-│   │   │   └── handlers.ts
-│   │   ├── domain/                # Entities, ValueObjects, Domain Events (pure logic)
-│   │   │   └── events/
-│   │   └── infrastructure/        # concrete repo/adapters (DB mappers, messaging)*
-│   │
-│   └── orders/
-│       ├── ui/
-│       ├── application/
-│       ├── domain/
-│       └── infrastructure/
-│
-├── lib/                           # Cross-cutting / infra helpers
-│   ├── db/
-│   │   ├── index.ts               # db client wrapper
-│   │   └── mongodb.ts
-│   ├── axios/                     # axios setup & interceptors (fetcher for SWR)
-│   │   └── helper.config.ts
-│   ├── swr/                       # global SWR config / fetcher
-│   │   └── config.ts
-│   ├── stores/                    # zustand stores (cart, user, middleware)
-│   │   ├── product.store.ts
-│   │   └── user.store.ts
-│   ├── messaging/                 # EventBus, adapters (in-memory / broker) *
-│   ├── validation/
-│   └── web3/
-│
-├── components/                    # Shared UI providers / wrappers
-│   └── Providers.tsx              # client wrapper: SWRConfig, theme, etc.
-│
-├── services/                      # background workers / consumers (optional)
-│   └── orders-consumer/           # subscribe to domain events (OrderCreated)
-│
-├── contracts/ (optional)          # shared event/DTO schemas (versioned)
-│
-├── public/                        # static assets
-│
-├── tests/                         # integration / e2e / unit tests
-│
-└── README.md
+</br>│   ├── layout.tsx                # root layout -> place providers (SWR, Providers)
+</br>│   ├── (shop)/
+</br>│   │   ├── products/
+</br>│   │   │   ├── [category]/page.tsx
+</br>│   │   │   └── details/[productId]/page.tsx
+</br>│   │   └── user/...
+</br>│   ├── (back-office)/
+</br>│   │   └── dashboard/page.tsx
+</br>│   └── api/
+</br>│       └── v1/
+</br>│           ├── auth/route.ts     # thin HTTP layer -> calls application handlers
+</br>│           └── orders/route.ts
+</br>│
+</br>├── features/                      # Bounded contexts (feature-first, DDD)
+</br>│   ├── products/
+</br>│   │   ├── ui/                    # React components + client hooks (useSWR, useStore)
+</br>│   │   │   ├── ProductCard.tsx
+</br>│   │   │   └── ProductList.tsx
+</br>│   │   ├── application/           # Use-cases / command & query handlers
+</br>│   │   │   └── handlers.ts
+</br>│   │   ├── domain/                # Entities, ValueObjects, Domain Events (pure logic)
+</br>│   │   │   └── events/
+</br>│   │   └── infrastructure/        # concrete repo/adapters (DB mappers, messaging)*
+</br>│   │
+</br>│   └── orders/
+</br>│       ├── ui/
+</br>│       ├── application/
+</br>│       ├── domain/
+</br>│       └── infrastructure/
+</br>│
+</br>├── lib/                           # Cross-cutting / infra helpers
+</br>│   ├── db/
+</br>│   │   ├── index.ts               # db client wrapper
+</br>│   │   └── mongodb.ts
+</br>│   ├── axios/                     # axios setup & interceptors (fetcher for SWR)
+</br>│   │   └── helper.config.ts
+</br>│   ├── swr/                       # global SWR config / fetcher
+</br>│   │   └── config.ts
+</br>│   ├── stores/                    # zustand stores (cart, user, middleware)
+</br>│   │   ├── product.store.ts
+</br>│   │   └── user.store.ts
+</br>│   ├── messaging/                 # EventBus, adapters (in-memory / broker) *
+</br>│   ├── validation/
+</br>│   └── web3/
+</br>│
+</br>├── components/                    # Shared UI providers / wrappers
+</br>│   └── Providers.tsx              # client wrapper: SWRConfig, theme, etc.
+</br>│
+</br>├── services/                      # background workers / consumers (optional)
+</br>│   └── orders-consumer/           # subscribe to domain events (OrderCreated)
+</br>│
+</br>├── contracts/ (optional)          # shared event/DTO schemas (versioned)
+</br>│
+</br>├── public/                        # static assets
+</br>│
+</br>├── tests/                         # integration / e2e / unit tests
+</br>│
+</br>└── README.md
 
 ## Pattern & conventions (ngắn)
 - Feature-first + layer separation: `ui` (React), `application` (use-cases), `domain` (pure logic).
@@ -161,6 +171,7 @@ Side-effects: Application layer có thể publish domain events (e.g., `OrderCre
 
 ## Notes
 - Repo already contains scaffolds for many of these pieces (empty domain/application files). Use them as starting points.
+
 
 ## License
 MIT — see `LICENSE`.
